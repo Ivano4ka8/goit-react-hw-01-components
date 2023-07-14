@@ -1,6 +1,6 @@
 import Profile from './Profile/Profile';
 import userInfo from '../jsons/user.json';
-import statistics from "../jsons/statistics.json"
+import statistics from '../jsons/statistics.json';
 import { Statistics } from './Statistics/Statistics';
 
 export const App = () => {
@@ -13,10 +13,6 @@ export const App = () => {
         avatar={userInfo.avatar}
         stats={userInfo.stats}
       />
-      <Statistics
-      
-      
-
     </>
   );
 };
