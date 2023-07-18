@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
+import {
+  FriendItemEl,
+  FriendStatus,
+  FriendImage,
+  FriendName,
+} from './FriendItem.styled';
 
 export default function FriendItem({ avatar, name, isOnline }) {
   return (
-    <li class="item">
-      <span class="status">{isOnline}</span>
-      <img class="avatar" src={avatar} alt={name} width="48" />
-      <p class="name">{name}</p>
-    </li>
+    <FriendItemEl>
+      <FriendStatus status={isOnline.toString()}>{isOnline}</FriendStatus>
+      <FriendImage src={avatar} alt={name} width="48" />
+      <FriendName>{name}</FriendName>
+    </FriendItemEl>
   );
 }
 

@@ -1,33 +1,43 @@
 import PropTypes from 'prop-types';
+import {
+  ProfileWrapper,
+  UserInformationWrapper,
+  UserAvatar,
+  UserName,
+  UserInformation,
+  UserStatisticList,
+  UserStatisticItem,
+  UserStatiscticText,
+} from './Profile.styled';
 
 export default function Profile({
   userInfo: { username, tag, location, avatar },
   stats: { followers, views, likes },
 }) {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt={username} class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">{tag}</p>
-        <p class="location">{location}</p>
-      </div>
+    <ProfileWrapper>
+      <UserInformationWrapper>
+        <UserAvatar src={avatar} alt={username} />
+        <UserName>{username}</UserName>
+        <UserInformation>{tag}</UserInformation>
+        <UserInformation>{location}</UserInformation>
+      </UserInformationWrapper>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <UserStatisticList>
+        <UserStatisticItem>
+          <UserStatiscticText>Followers</UserStatiscticText>
+          <UserStatiscticText>{followers}</UserStatiscticText>
+        </UserStatisticItem>
+        <UserStatisticItem>
+          <UserStatiscticText>Views</UserStatiscticText>
+          <UserStatiscticText>{views}</UserStatiscticText>
+        </UserStatisticItem>
+        <UserStatisticItem>
+          <UserStatiscticText>Likes</UserStatiscticText>
+          <UserStatiscticText>{likes}</UserStatiscticText>
+        </UserStatisticItem>
+      </UserStatisticList>
+    </ProfileWrapper>
   );
 }
 
